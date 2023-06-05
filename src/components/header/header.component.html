@@ -1,0 +1,283 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" *ngIf="device.isBrowser">
+    <div class="container" *ngIf="!(deviceService.$mobile|async)">
+      <a href="/" class="home-link ponddy-logo"> </a>
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul *ngIf="!(deviceService.$mobile |async)" class="pd-nav-item navbar-nav text-center">
+
+          <li class="nav-item nav-border-l nav-border-r">
+            <a i18n="header" routerLink="/home" [class.active]="actvieMenu==='home'" class="text_menu" data="navbar">
+              Home
+            </a>
+          </li>
+          <li class="nav-item nav-border-r ">
+            <a i18n="header" routerLink="/ponddy" [class.active]="actvieMenu==='ponddy'" class="nav-a text_menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ponddy
+            </a>
+          </li>
+          <li class="nav-item nav-border-r ">
+            <a i18n="header" routerLink="/courses" [class.active]="actvieMenu==='courses'" class="nav-a text_menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Courses
+            </a>
+          </li>
+          <li class="nav-item nav-border-r">
+            <a i18n="header" routerLink="/tests/chinese" #button #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu" (mouseenter)="buttonEnter(menuTrigger)" (mouseleave)="buttonLeave(menuTrigger, button)" [class.active]="actvieMenu==='tests'" href="#" data="navbar"
+              class="nav-a text_menu">
+              Tests
+            </a>
+            <mat-menu #menu="matMenu">
+              <div class="menu_wrap" (mouseenter)="menuEnter()" (mouseleave)="menuLeave(menuTrigger, button)">
+                <span>
+                <button mat-menu-item class="pd-menu-item" routerLink="/tests/chinese">
+                  <a>Chinese Tests</a></button>
+                <button mat-menu-item class="pd-menu-item" routerLink="/tests/instructions/1">
+                  <a>Test Instructions</a></button>
+                <button mat-menu-item class="pd-menu-item" routerLink="/tests/enroll">
+                  <a>Enroll a test</a></button>
+              </span>
+              </div>
+            </mat-menu>
+          </li>
+          <li class="nav-item nav-border-r ">
+            <a i18n="header" routerLink="/resources/preparation" #buttonResource #menuTriggerResource="matMenuTrigger" [matMenuTriggerFor]="menuRsource" (mouseenter)="buttonEnter(menuTriggerResource)" (mouseleave)="buttonLeave(menuTriggerResource, buttonResource)"
+              [class.active]="actvieMenu==='resources'" data="navbar" class="nav-a text_menu">
+              Resources
+            </a>
+            <mat-menu #menuRsource="matMenu">
+              <div class="menu_wrap" (mouseenter)="menuEnter()" (mouseleave)="menuLeave(menuTriggerResource, buttonResource)">
+                <span>
+
+                <button mat-menu-item class="pd-menu-item" routerLink="/resources/preparation">
+                  <a>Preparation</a>
+                </button>
+                <button mat-menu-item class="pd-menu-item" routerLink="/resources/smart">
+                  <a>AI Chinese Tools</a>
+                </button>
+                <button mat-menu-item class="pd-menu-item" routerLink="/resources/download">
+                  <a>Test Prep Resources</a>
+                </button>
+              </span>
+              </div>
+            </mat-menu>
+          </li>
+          <li class="nav-item nav-border-r">
+            <a i18n="header" routerLink="/faq" [class.active]="actvieMenu==='faq'" data="navbar" class="nav-a text_menu">
+              FAQ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a i18n="header" href="https://chinese.ponddy.com/products/app-dictionary/" data="navbar" target="_black" class="nav-a text_menu">
+              <img src="/assets/image/icon/logo_dictionary.svg" alt=""> Dictionary
+            </a>
+          </li>
+          <!-- <li class="nav-item enroll" routerLink="/enrollTest">
+            <a i18n="header" [class.active]="actvieMenu==='enrollTest'" data="navbar" class="nav-a text_menu">
+              Enroll a Test
+            </a>
+          </li> -->
+        </ul>
+      </div>
+      <!-- <div class="enroll">
+        <a class="text_menu" routerLink="/enrollTest">
+          <span>Enroll a test</span>
+        </a>
+      </div> -->
+      <div [class.login]="loginActive==='Login'" class="loginNo">
+        <a href="#" class="text_menu" (click)="openLogin()">
+          <span>Log in</span>
+        </a>
+      </div>
+      <div [class.login]="loginActive==='Logout'" class="loginNo">
+        <a href="#" class="text_menu" (click)="Logout()">
+          <span>Log out</span>
+        </a>
+      </div>
+    </div>
+    <div class="container" *ngIf="deviceService.$mobile|async">
+      <mat-expansion-panel #expansion *ngIf="deviceService.$mobile|async" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <a href="/" class="home-link ponddy-logo">
+            </a>
+            <button class="navbar-toggler" type="button">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-text">menu</span>
+            </button>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="pd-nav-item navbar-nav mr-auto text-center">
+
+          <li class="nav-item" routerLink="/home">
+            <a i18n="header" [class.active]="actvieMenu==='home'" class="nav-active text_menu ga_class_home" data="navbar">
+              Home
+            </a>
+          </li>
+          <li class="nav-item" routerLink="/ponddy">
+            <a i18n="header" [class.active]="actvieMenu==='ponddy'" class="nav-a text_menu ga_class_ponddy">
+              Ponddy
+            </a>
+          </li>
+          <li class="nav-item" routerLink="/courses">
+            <a i18n="header" [class.active]="actvieMenu==='courses'" class="nav-a text_menu ga_class_courses">
+              Course
+            </a>
+          </li>
+          <li class="nav-item">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="title">
+                      <a [class.active]="actvieMenu==='tests'" i18n="header" data="navbar" class="nav-a text_menu ga_class_tests">
+                        Tests
+                      </a>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="text">
+                  <a i18n="header" data="navbar" class="nav-a text_menu ga_class_tests_chinese" routerLink="/tests/chinese">
+                    Chinese Tests
+                  </a>
+                  <br>
+                  <a i18n="header" data="navbar" class="nav-a text_menu ga_class_tests_instructions" routerLink="/tests/instructions/1">
+                    Test Instructions
+                  </a>
+                  <br>
+                  <a i18n="header" data="navbar" class="nav-a text_menu ga_class_tests_enroll" routerLink="/tests/enroll">
+                    Enroll a test
+                  </a>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </li>
+          <li class="nav-item">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="title">
+                      <a [class.active]="actvieMenu==='resources'" i18n="header" data="navbar" class="nav-a text_menu ga_class_resources">
+                        Resource
+                      </a>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="text">
+                  <a i18n="header" data="navbar" class="nav-a text_menu ga_class_resources_preparation" routerLink="/resources/preparation">
+                    Preparation
+                  </a>
+                  <br>
+                  <a i18n="header" data="navbar" class="nav-a text_menu ga_class_resources_smart" routerLink="/resources/smart">
+                    AI Chinese Tools
+                  </a>
+                  <br>
+                  <a i18n="header" data="navbar" class="nav-a text_menu ga_class_resources_download" routerLink="/resources/download">
+                    Test Prep Resource
+                  </a>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </li>
+          <li class="nav-item" routerLink="/faq">
+            <a i18n="header" [class.active]="actvieMenu==='faq'" data="navbar" class="nav-a text_menu ga_class_faq">
+              FAQ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a i18n="header" href="https://chinese.ponddy.com/products/app-dictionary/" data="navbar" target="_black" class="nav-a text_menu">
+              <img src="/assets/image/icon/logo_dictionary.svg" alt=""> Dictionary
+            </a>
+          </li>
+          <!-- <li class="nav-item enroll" routerLink="/enrollTest">
+            <a i18n="header" [class.active]="actvieMenu==='enrollTest'" data="navbar" class="nav-a text_menu">
+              Enroll a Test
+            </a>
+          </li> -->
+          <!-- <li class="mobile action nav-item">
+            <div class="enroll">
+              <a class="text_menu" routerLink="/enrollTest">
+                <span>Enroll a test</span>
+              </a>
+            </div>
+          </li> -->
+
+          <li class="mobile action nav-item">
+            <div [class.login]="loginActive==='Login'" class="loginNo">
+              <a href="#" class="text_menu " (click)="openLogin()">
+                <span>Log in</span>
+              </a>
+            </div>
+            <div [class.login]="loginActive==='Logout'" class="loginNo">
+              <a href="#" class="text_menu" (click)="Logout()">
+                <span>Log out</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </mat-expansion-panel>
+    </div>
+  </nav>
+
+  <nav *ngIf="!device.isBrowser" style="height: 0px;">
+    <div class="container">
+      <a href="/" class="home-link ponddy-logo"> </a>
+      <div class="collapse navbar-collapse">
+        <ul *ngIf="!(deviceService.$mobile |async)" class="pd-nav-item navbar-nav mr-auto text-center" style="display:flex;flex-direction: row;padding: 0;margin: 0;width: 100%">
+
+          <li class="nav-item nav-border-l nav-border-r" style="display: inline;">
+            <a i18n="header" routerLink="/home" [class.active]="actvieMenu==='home'" class="text_menu ga_class_home" data="navbar">
+              Home
+            </a>
+          </li>
+          <li class="nav-item nav-border-r " style="display: inline;">
+            <a i18n="header" routerLink="/ponddy" [class.active]="actvieMenu==='ponddy'" class="nav-a text_menu ga_class_ponddy" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ponddy
+            </a>
+          </li>
+          <li class="nav-item nav-border-r " style="display: inline;">
+            <a i18n="header" routerLink="/courses" [class.active]="actvieMenu==='courses'" class="nav-a text_menu ga_class_courses" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Courses
+            </a>
+          </li>
+          <li class="nav-item nav-border-r" style="display: inline;">
+            <a i18n="header" routerLink="/tests/chinese" [class.active]="actvieMenu==='tests'" class="nav-a text_menu ga_class_tests_chinese" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tests
+            </a>
+          </li>
+          <li class="nav-item nav-border-r " style="display: inline;">
+            <a i18n="header" routerLink="/resources/preparation" [class.active]="actvieMenu==='resources'" class="nav-a text_menu ga_class_resources_preparation" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Resources
+            </a>
+          </li>
+          <li class="nav-item" style="display: inline;">
+            <a i18n="header" routerLink="/faq" [class.active]="actvieMenu==='faq'" data="navbar" class="nav-a text_menu ga_class_resources_faq">
+              FAQ
+            </a>
+          </li>
+          <li class="nav-item" style="display: inline;">
+            <a i18n="header" href="https://chinese.ponddy.com/products/app-dictionary/" data="navbar" target="_black" class="nav-a text_menu">
+              <img src="/assets/image/icon/logo_dictionary.svg" alt=""> Dictionary
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="enroll">
+        <a class="text_menu">
+          <span>Enroll a test</span>
+        </a>
+      </div>
+      <div [class.login]="loginActive==='Login'" class="loginNo">
+        <a href="#" class="text_menu" (click)="openLogin()">
+          <span>Log in</span>
+        </a>
+      </div>
+      <div [class.login]="loginActive==='Logout'" class="loginNo">
+        <a href="#" class="text_menu" (click)="Logout()">
+          <span>Log out</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

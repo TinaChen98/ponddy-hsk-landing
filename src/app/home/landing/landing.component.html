@@ -1,0 +1,179 @@
+<section id="landing_home" class="landing carousel_section">
+  <div class="iconify_wrap" (click)="smoothScroll()">
+    <span class="iconify"
+          data-inline="false" data-icon="bi:arrow-down-circle"></span>
+
+  </div>
+  <mdb-carousel
+          *ngIf="device.isBrowser"
+          [interval]="3000"
+          class="carousel slide carousel-fade" [animation]="'fade'" [allowSwipe]="true">
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block" [defaultImage]="carouselImageList_small[0]" [lazyLoad]="carouselImageList[0]" alt="">
+        <div class="mask waves-light" mdbWavesEffect></div>
+        <div class="background">
+          <div class="padding_space"></div>
+          <div class="mask_space">
+
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-11  title">
+              <h1 i18n>Ponddy® HSK Smart Learning to Tackle the Chinese Proficiency Test</h1>
+              <div class="learn_more orange_text" routerLink="/tests/chinese">
+                <p i18n>Learn more</p>
+                <img src="/assets/image/icon/btn_orange_normal.svg" alt="">
+<!--                <span class="iconify"-->
+<!--                      data-inline="false" data-icon="mdi:play-circle">-->
+<!--                  </span>-->
+
+              </div>
+            </div>
+<!--            <span class="iconify" data-inline="false" data-icon="bi:arrow-down-circle" style="color: #FFFFFF; font-size: 32px;"></span>-->
+          </div>
+        </div>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block" [defaultImage]="carouselImageList_small[1]" [lazyLoad]="carouselImageList[1]" alt="">
+        <div class="background">
+          <div class="padding_space"></div>
+          <div class="mask_space">
+
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-11 col-md-9">
+              <h1 class="smaller_title" i18n>Welcome To The First At-home Ponddy® HSK Online Test Center In The USA Earn Your Extra Cutting Edge While Staying Safe</h1>
+              <div class="learn_more orange_text" routerLink="/ponddy">
+                <p i18n>Learn more</p>
+                <img src="/assets/image/icon/btn_orange_hover.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-caption">
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block" [defaultImage]="carouselImageList_small[2]" [lazyLoad]="carouselImageList[2]" alt="">
+        <div class="background">
+          <div class="padding_space"></div>
+          <div class="mask_space">
+
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-11 col-md-9">
+              <h1 class="smaller_title" i18n>Get Ready For The HSK Test With Ponddy® AI-Powered Interactive Platform & Experienced Online Tutors.</h1>
+              <div class="learn_more orange_text" routerLink="/courses">
+                <p i18n>Learn more</p>
+                <img src="/assets/image/icon/btn_orange_hover.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block" [defaultImage]="carouselImageList_small[3]" [lazyLoad]="carouselImageList[3]" alt="">
+        <div class="background">
+          <div class="padding_space"></div>
+          <div class="mask_space">
+
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-11 col-md-9">
+              <h1 i18n>Ponddy® Smart Learning To Help Your Kids Prepare For The Future Chinese Proficiency Test</h1>
+              <div class="learn_more orange_text" routerLink="/courses">
+                <p i18n>Learn more</p>
+                <img src="/assets/image/icon/btn_orange_hover.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block" [defaultImage]="carouselImageList_small[4]" [lazyLoad]="carouselImageList[4]" alt="">
+        <div class="background">
+          <div class="padding_space"></div>
+          <div class="mask_space">
+
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-11 col-md-9">
+              <h1 i18n>Ponddy® Smart AI Platform To Help Your Students Master The Chinese Language </h1>
+              <div class="learn_more orange_text" routerLink="/resources/smart">
+                <p i18n>Learn more</p>
+                <img src="/assets/image/icon/btn_orange_hover.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mdb-carousel-item>
+<!--    <span class="iconify" data-icon="teenyicons:arrow-down-circle-solid" data-inline="false" style="color: #FFFFFF; font-size: 32px;"></span>-->
+
+  </mdb-carousel>
+
+  <div *ngIf="!device.isBrowser">
+    <div class="view w-100">
+      <img class="d-block " style="width: 100%;" [src]="'https://d1442rljwt9063.cloudfront.net/home/index_pic_01.png'" alt="">
+      <div class="background">
+        <div style="width: 100%;height: 100%;position: absolute;top: 0;z-index: 1000;background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);"></div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-11 col-md-9" style="position: absolute;z-index: 1000;top: 10%;left: 10%;">
+            <h1 i18n>Ponddy® HSK Smart Learning to Tackle the Chinese Proficiency Test</h1>
+            <div class="learn_more orange_text">
+              <p i18n style="color:#F3A024">Learn more</p>
+              <img src="/assets/image/icon/btn_orange_hover.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="free_class_section">
+  <div class="view w-100">
+    <div class="">
+      <div class="container">
+        <div class="row justify-content-center" style="display:flex;justify-content: center !important;">
+          <div class="col-12 col-md-6 col-sm-10  text-center">
+            <h1 i18n>Ponddy Online HSK Chinese Courses</h1>
+            <div class="date_counter_wrap">
+<!--              <span>Limited time offer</span>-->
+<!--              <app-date-counter [countDownDateString]="'2021-03-18T11:00:00+08:00'"></app-date-counter>-->
+              <a class="btn_focus-primary" style="cursor: pointer;
+              display: inline-block;
+              padding: 12px 24px;
+              background: #ffc05c;
+              border-radius: 24px;
+              text-decoration: none;
+              align-items: center;
+              text-align: center;" routerLink="/freeclass-2021q1a">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,332 @@
+.booking {
+  background: #fbfcfc;
+
+  .container {
+    padding: 35px 0;
+
+    .tab_title {
+      display: inline-flex;
+      border-bottom: 1px solid #576168;
+      width: 100%;
+
+      .wrap_h1 {
+        padding: 0 16px;
+
+        &:nth-child(1) {
+          padding-left: 0;
+          padding-right: 16px;
+          border-right: 1px solid #576168;
+        }
+
+        &:nth-last-child(1) {
+          padding-left: 16px;
+          padding-right: 0;
+          border-left: 1px solid #576168;
+        }
+      }
+
+      h1 {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        margin: 0;
+        cursor: pointer;
+        color: #576168;
+        @media (max-width: 767px) {
+          font-size: 26px;
+        }
+        &:hover {
+          color: #93e2fa;
+        }
+
+        &:nth-child(2) {
+          padding-left: 16px;
+        }
+
+        &.active {
+          color: #6ACFED;
+          border-bottom: 5px solid #6ACFED;
+        }
+      }
+    }
+
+    .description {
+      padding: 20px 0 0 0;
+
+      h2 {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        color: #2D3942;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        color: #576168;
+        font-weight: normal;
+      }
+    }
+
+    .schedule {
+      h2 {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        color: #2D3942;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        color: #2D3942;
+        margin: 6px;
+        font-weight: normal;
+
+      }
+
+      .time {
+        font-size: 14px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        color: #969CA0;
+      }
+    }
+
+    .info_table {
+      padding: 0;
+      margin-top: 36px;
+
+      img {
+        width: 90%;
+      }
+    }
+
+    form {
+      background-color: #FFFFFF;
+      text-align: center;
+      width: 100%;
+      max-width: 460px;
+      padding: 36px 22px 36px 22px;
+      min-height: 780px;
+      height: 100%;
+      position: relative;
+      margin: auto auto 16px auto;
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
+
+      h2 {
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 42px;
+        text-align: center;
+        letter-spacing: 0.5px;
+        color: #2D3942;
+        margin-bottom: 20px;
+      }
+
+      .test_level {
+        max-width: 296px;
+        margin: auto;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.8px;
+          color: #576168;
+          margin: 4px;
+        }
+
+        button {
+          padding: 13px 40px;
+          background: #FFFFFF;
+          border: 1px solid #D5D7D9;
+          box-sizing: border-box;
+          border-radius: 4px;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 30px;
+          text-align: center;
+          margin-bottom: 16px;
+
+          &:nth-child(2n) {
+            margin-right: 16px;
+          }
+
+          &.active {
+            background: #6ACFED;
+            color: #FFFFFF;
+            border: 1px solid #3B9FBE;
+          }
+        }
+      }
+
+      .form-field {
+        display: inline-grid;
+        width: 100%;
+        max-width: 296px;
+        margin-bottom: 16px;
+
+        label {
+          font-size: 16px;
+          line-height: 22px;
+          color: #576168;
+          text-align: left;
+          margin-bottom: 4px;
+        }
+
+        input {
+          padding: 10px 12px;
+          background: #FFFFFF;
+          border: 1px solid #D5D7D9;
+          box-sizing: border-box;
+          border-radius: 4px;
+
+          &[placeholder] {
+            font-size: 20px;
+            line-height: 36px;
+            letter-spacing: 1px;
+          }
+        }
+
+        mat-select {
+          padding: 10px 12px;
+          background: #FFFFFF;
+          border: 1px solid #D5D7D9;
+          box-sizing: border-box;
+          border-radius: 4px;
+          min-height: 56px;
+
+          ::ng-deep {
+            .mat-select-trigger {
+              height: 2.2rem;
+            }
+
+            .mat-select-placeholder {
+              font-size: 20px;
+              line-height: 36px;
+              letter-spacing: 1px;
+              color: #D5D7D9;
+            }
+
+            .mat-select-value {
+              text-align: left;
+              font-size: 20px;
+              line-height: 36px;
+            }
+          }
+
+        }
+
+        .form-pricing-field {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          .pricing_number {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 1px;
+            color: #EA4B65;
+            margin: 0;
+            .origin_price{
+              margin-right: 4px;
+            }
+          }
+
+          span {
+            color: #2D3942;
+            text-decoration: line-through;
+          }
+        }
+
+        .pricing_warn {
+          font-size: 10px;
+          line-height: 16px;
+          letter-spacing: 1px;
+          color: #EA4B65;
+          font-weight: normal;
+        }
+      }
+
+      .check_wrap {
+        display: inline-flex;
+        width: 296px;
+
+        mat-checkbox {
+          width: 296px;
+          line-height: 24px;
+          margin-left: 8px;
+        }
+      }
+
+      &.summary {
+        .form-field {
+          text-align: left;
+          display: table;
+          justify-content: space-between;
+          margin: auto;
+          max-width: 350px;
+          width: 100%;
+
+          .cell {
+            display: table-cell;
+            width: 40%;
+
+            &:nth-child(1) {
+              width: 60%;
+            }
+
+            label {
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 22px;
+              color: #2D3942;
+              text-align: left;
+              margin-bottom: 4px;
+            }
+
+            p {
+              color: #2D3942;
+              font-weight: normal;
+            }
+          }
+        }
+
+        ::ng-deep.mat-checkbox-layout {
+          white-space: normal;
+        }
+
+        hr {
+          max-width: 350px;
+          border: 1px solid #EAEBEC;
+        }
+
+      }
+
+      .btn_wrap {
+        margin: 16px auto auto auto;
+        bottom: 18px;
+        left: 0;
+        right: 0;
+
+        p {
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.5px;
+          color: #576168;
+          max-width: 216px;
+          margin: 10px auto auto;
+        }
+      }
+    }
+  }
+}
+

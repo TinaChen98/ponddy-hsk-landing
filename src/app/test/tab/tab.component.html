@@ -1,0 +1,33 @@
+<section class="test">
+  <mat-tab-group color=undefined animationDuration="0ms" [selectedIndex]="inputTab" (selectedIndexChange)="changeTab($event)">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div>
+          <img class="icon_course" alt="">
+        </div>
+        Chinese Tests
+      </ng-template>
+      <app-intro-chinese></app-intro-chinese>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div id="test-intro">
+          <img class="icon_preparation" alt="">
+        </div>
+        Test Instructions
+      </ng-template>
+      <app-intro-test></app-intro-test>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div id="intro-enroll">
+          <img class="icon_enroll" alt="">
+        </div>
+        Enroll a test
+      </ng-template>
+      <app-intro-enroll></app-intro-enroll>
+    </mat-tab>
+  </mat-tab-group>
+</section>

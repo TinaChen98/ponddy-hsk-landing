@@ -1,0 +1,36 @@
+<section class="resources">
+  <mat-tab-group color=undefined animationDuration="0ms" [selectedIndex]="inputTab" (selectedIndexChange)="changeTab($event)">
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <img class="icon_preparation" alt="">
+        <div class="tab_text">
+          <div>Preparation</div>
+        </div>
+      </ng-template>
+      <app-intro-preparation (downloadChange)="setDownload($event)"></app-intro-preparation>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <img class="icon_smart" alt="">
+        <div class="tab_text">
+          <div>AI Chinese</div>
+          <div>&nbsp;Tools</div>
+        </div>
+      </ng-template>
+      <app-intro-smart></app-intro-smart>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <img class="icon_download" alt="">
+        <div class="tab_text">
+          <div>Test Prep</div>
+          <div>&nbsp;Resource</div>
+        </div>
+      </ng-template>
+      <app-download></app-download>
+    </mat-tab>
+  </mat-tab-group>
+</section>

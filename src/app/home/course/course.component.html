@@ -1,0 +1,66 @@
+<section class="course carousel_section">
+  <div class="background">
+    <div class="top"></div>
+    <div class="bottom"></div>
+  </div>
+  <div class="container">
+    <div class="row text-center">
+      <h1 i18n class="title">HSK Course</h1>
+    </div>
+  </div>
+  <div class="container-right">
+    <div *ngIf="device.isBrowser" class="row">
+      <carousel #course_carousel [height]="courseHeight" [cellWidth]="courseWidth" [dots]="false" [arrows]="false">
+        <div class="carousel-cell">
+          <div class="image_box">
+            <img [lazyLoad]="'https://d1442rljwt9063.cloudfront.net/home/course_pic_01.png'" alt="">
+          </div>
+          <h2 i18n>HSK 1 & 2</h2>
+          <p i18n class="level">Average Level: HSK 1~2</p>
+          <h2 i18n class="ta">HSK for Adult </h2>
+        </div>
+        <div class="carousel-cell">
+          <div class="image_box">
+            <img [lazyLoad]="'https://d1442rljwt9063.cloudfront.net/home/course_pic_02.png'" alt="">
+          </div>
+          <h2 i18n>HSK 3</h2>
+          <p i18n class="level">Average Level: HSK 3</p>
+          <h2 i18n class="ta">HSK for Adult </h2>
+        </div>
+        <div class="carousel-cell">
+          <div class="image_box">
+            <img [lazyLoad]="'https://d1442rljwt9063.cloudfront.net/home/course_pic_03.png'" alt="">
+          </div>
+          <h2 i18n>HSK 4</h2>
+          <p i18n class="level">Average Level: HSK 4</p>
+          <h2 i18n class="ta">HSK for Adult </h2>
+        </div>
+        <div class="carousel-cell">
+          <div class="image_box">
+            <img [lazyLoad]="'https://d1442rljwt9063.cloudfront.net/home/course_pic_04.png'" alt="">
+          </div>
+          <h2 i18n>HSK 3</h2>
+          <p i18n class="level">Average Level: HSK 3</p>
+          <h2 i18n class="ta">HSK for Student</h2>
+        </div>
+      </carousel>
+    </div>
+    <div class="row">
+      <div class="arrow">
+        <span class="course_img-right left" [class.disable]="disableClass=='left'" (click)="coursePrev()"></span>
+        <span class="course_img-right right" [class.disable]="disableClass=='right'" (click)="courseNext()"></span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    <div class="row text-center help">
+      <h1 i18n>Need help to nail the tests?</h1>
+    </div>
+    <div class="flex-center">
+      <button i18n class="btn_focus-primary">
+        Learn more
+      </button>
+    </div>
+  </div>
+</section>

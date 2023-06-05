@@ -1,0 +1,43 @@
+<section class="about_ponddy carousel_section" [ngStyle]="{'background':colorBg}">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12" [ngClass]='colClass'>
+        <h1 i18n="about ponddy title">Ponddy Education</h1>
+        <p i18n="about ponddy description" class="description">
+          Ponddy® is an advanced AI smart learning brand. Powered by innovative AKLS® AI technology, Ponddy’s smart learning solutions include intelligent platforms, customized resources, tailored curricula, on-line tutors, and at-home online testing services.
+          Ponddy® Smart Learning is a new way to teach and learn Chinese or English more effectively: teachers could easily fix students’ learning gaps, and learners could have personalized learning experience, according to their own language levels,
+          learning objectives, and backgrounds. Adopted by over 1000 schools from 84 countries around the world, Ponddy® is widely recognized by international official language testing and teaching institutions.
+        </p>
+        <p *ngIf="descriptionSection2" i18n="description" class="description">
+          Ponddy® HSK is the first online HSK test center in the U.S.A. that offers at-home online testing services for HSK, HSKK, YCT, and BCT official Chinese language tests. Ponddy® courses are designed by our expert-teaching team and are fully accredited by
+          ACS Western Association of Schools and Colleges of the United States.
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center carousel_wrap">
+      <div *ngIf="!device.$mobile.getValue()" class="col-md-1 arrow left">
+        <span class="course_img-left" [class.disable]="disableClass=='left'" (click)="coursePrev()"></span>
+      </div>
+      <div *ngIf="device.isBrowser" class="col-md-8" [ngClass]='colClass'>
+        <carousel [height]="height" #course_carousel [cellWidth]="'100%'" [dots]="false" [arrows]="false">
+          <div class="carousel-cell" *ngFor="let carouselImage of carouselImageList;let i = index">
+            <img class="d-block w-100" [src]="carouselImage" [alt]="'slide_'+i" alt="">
+          </div>
+        </carousel>
+      </div>
+      <div *ngIf="!device.isBrowser" class="col-md-8" style="text-align: center;" [ngClass]='colClass'>
+          <img src="https://d1442rljwt9063.cloudfront.net/ponddy/logo_1.png" width="70%" alt="">
+          <img src="https://d1442rljwt9063.cloudfront.net/ponddy/logo_2.png" width="70%" alt="">
+          <img src="https://d1442rljwt9063.cloudfront.net/ponddy/logo_3.png" width="70%" alt="">
+      </div>
+      <div *ngIf="!device.$mobile.getValue()" class="col-md-1 arrow right">
+        <span class="course_img-right" [class.disable]="disableClass=='right'" (click)="courseNext()"></span>
+      </div>
+      <div *ngIf="device.$mobile.getValue()" class="col-10 justify-content-center arrow">
+        <img style="margin-right: 32px" class="left" [lazyLoad]="'/assets/image/icon/btn_normal_left.svg'" (click)="coursePrev()" alt="">
+        <img class="right" [lazyLoad]="'/assets/image/icon/btn_normal_right.svg'" (click)="courseNext()" alt="">
+      </div>
+    </div>
+  </div>
+</section>
