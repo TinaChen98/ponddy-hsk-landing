@@ -26,9 +26,9 @@ export class BookingComponent implements OnInit {
   }
 
   infoTableList = {
-    hsk1: '/assets/image/freeclass/HSK 1&2.svg',
-    hsk3: '/assets/image/freeclass/HSK 3.svg',
-    hsk4: '/assets/image/freeclass/HSK 4_original price'
+    hsk1: '../assets/image/freeclass/HSK 1&2.svg',
+    hsk3: '../assets/image/freeclass/HSK 3.svg',
+    hsk4: '../assets/image/freeclass/HSK 4_original price'
   }
   // info provided by Emily 3/11 at slack
   dateHsk12end = '2021-03-12T11:00:00+08:00'
@@ -166,7 +166,7 @@ export class BookingComponent implements OnInit {
   endHsk12RedDiscount() {
     this.pricingList.adult1 = {...this.pricingList.adult1, price: 360, stripeKey: 'price_1ITNQdHRhoOpWeKwK2Mwvcye'}
     this.pricingList.student1 = {...this.pricingList.student1, price: 400, stripeKey: 'price_1ITNQdHRhoOpWeKwfazVauP8'}
-    this.infoTableList.hsk1 = '/assets/image/freeclass/HSK 1&2_original price.svg'
+    this.infoTableList.hsk1 = './assets/image/freeclass/HSK 1&2_original price.svg'
   }
 
   endHsk3RedDiscount() {
@@ -174,8 +174,8 @@ export class BookingComponent implements OnInit {
     this.pricingList.student1 = {...this.pricingList.student1, price: 400, stripeKey: 'price_1ITNQdHRhoOpWeKwfazVauP8'}
     this.pricingList.adult3 = {...this.pricingList.adult3, price: 400, stripeKey: 'price_1ITNQdHRhoOpWeKwftZrdlCZ'}
     this.pricingList.student3 = {...this.pricingList.student3, price: 480, stripeKey: 'price_1ITNQdHRhoOpWeKwtQ3jYrWF'}
-    this.infoTableList.hsk1 = '/assets/image/freeclass/HSK 1&2_original price.svg'
-    this.infoTableList.hsk3 = '/assets/image/freeclass/HSK 3_original price.svg'
+    this.infoTableList.hsk1 = './assets/image/freeclass/HSK 1&2_original price.svg'
+    this.infoTableList.hsk3 = './assets/image/freeclass/HSK 3_original price.svg'
   }
 
   endHsk4RedDiscount() {
@@ -185,9 +185,9 @@ export class BookingComponent implements OnInit {
     this.pricingList.student3 = {...this.pricingList.student3, price: 480, stripeKey: 'price_1ITNQdHRhoOpWeKwtQ3jYrWF'}
     this.pricingList.adult4 = {...this.pricingList.adult4, price: 576, stripeKey: 'price_1J4iH2HRhoOpWeKwRP0t7YAb'}
     this.pricingList.student4 = {...this.pricingList.student4, price: 1152, stripeKey: 'price_1J4iHjHRhoOpWeKwrca1fh7R'}
-    this.infoTableList.hsk1 = '/assets/image/freeclass/HSK 1&2_original price.svg'
-    this.infoTableList.hsk3 = '/assets/image/freeclass/HSK 3_original price.svg'
-    this.infoTableList.hsk4 = '/assets/image/freeclass/HSK 4_original price.svg'
+    this.infoTableList.hsk1 = './assets/image/freeclass/HSK 1&2_original price.svg'
+    this.infoTableList.hsk3 = './assets/image/freeclass/HSK 3_original price.svg'
+    this.infoTableList.hsk4 = './assets/image/freeclass/HSK 4_original price.svg'
   }
 
   endYellowDiscount() {
@@ -197,9 +197,9 @@ export class BookingComponent implements OnInit {
     this.pricingList.student1 = {...this.pricingList.student1, price: 480, stripeKey: 'price_1ITNQdHRhoOpWeKw4hxuhBji'}
     this.pricingList.student3 = {...this.pricingList.student3, price: 576, stripeKey: 'price_1ITNQdHRhoOpWeKwNQB8WlB1'}
     this.pricingList.student4 = {...this.pricingList.student4, price: 1152, stripeKey: 'price_1J4iHjHRhoOpWeKwrca1fh7R'}
-    this.infoTableList.hsk1 = '/assets/image/freeclass/HSK 1&2_original price.svg'
-    this.infoTableList.hsk3 = '/assets/image/freeclass/HSK 3_original price.svg'
-    this.infoTableList.hsk4 = '/assets/image/freeclass/HSK 4_original price.svg'
+    this.infoTableList.hsk1 = './assets/image/freeclass/HSK 1&2_original price.svg'
+    this.infoTableList.hsk3 = './assets/image/freeclass/HSK 3_original price.svg'
+    this.infoTableList.hsk4 = './assets/image/freeclass/HSK 4_original price.svg'
   }
 
 

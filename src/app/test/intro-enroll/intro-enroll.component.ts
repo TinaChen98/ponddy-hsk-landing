@@ -20,7 +20,7 @@ export class IntroEnrollComponent implements OnInit {
 
   step = [{
     number: '1',
-    icon: '/assets/image/test/icon_web.svg'
+    icon: './assets/image/test/icon_web.svg'
   }]
 
 

@@ -35,8 +35,8 @@
         <span class="course_img-right" [class.disable]="disableClass=='right'" (click)="courseNext()"></span>
       </div>
       <div *ngIf="device.$mobile.getValue()" class="col-10 justify-content-center arrow">
-        <img style="margin-right: 32px" class="left" [lazyLoad]="'/assets/image/icon/btn_normal_left.svg'" (click)="coursePrev()" alt="">
-        <img class="right" [lazyLoad]="'/assets/image/icon/btn_normal_right.svg'" (click)="courseNext()" alt="">
+        <img style="margin-right: 32px" class="left" [lazyLoad]="'./assets/image/icon/btn_normal_left.svg'" (click)="coursePrev()" alt="">
+        <img class="right" [lazyLoad]="'./assets/image/icon/btn_normal_right.svg'" (click)="courseNext()" alt="">
       </div>
     </div>
   </div>
